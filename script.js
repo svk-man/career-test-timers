@@ -5,17 +5,38 @@ const UI = {
 }
 
 function createTimerItem(seconds) {
+  let timerSeconds = seconds - 1;
+  let timerId = null;
+
   const li = document.createElement('li');
 
   const timerText = document.createElement('span');
-  timerText.textContent = seconds
-
+  timerText.textContent = seconds;
 
   const timerPlayButton = document.createElement('button');
   timerPlayButton.textContent = '▶';
+  timerPlayButton.addEventListener('click', function() {
+    if (timerId) return;
+
+    timerId = setInterval(() => {
+      timerText.textContent = timerSeconds;
+      if (!timerSeconds) {
+        clearInterval(timerId);
+        timerId = null;
+      }
+
+      timerSeconds -= 1;
+    }, 1000)
+  })
 
   const timerStopButton = document.createElement('button');
   timerStopButton.textContent = '⏹';
+  timerStopButton.addEventListener('click', function() {
+    if (!timerId) return;
+
+    clearInterval(timerId);
+    timerId = null;
+  })
 
   li.appendChild(timerText);
   li.appendChild(timerPlayButton);
