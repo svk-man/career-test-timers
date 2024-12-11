@@ -45,7 +45,9 @@ function createTimerItem(seconds) {
   return li;
 }
 
-UI.FORM.addEventListener('submit', (event) => {
+UI.FORM.addEventListener('submit', handleSubmitForm);
+
+function handleSubmitForm(event) {
   event.preventDefault();
 
   const seconds = UI.INPUT.value;
@@ -55,4 +57,4 @@ UI.FORM.addEventListener('submit', (event) => {
   UI.TIMERS.appendChild(timerItem);
 
   UI.FORM.reset();
-})
+}
