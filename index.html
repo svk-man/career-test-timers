@@ -7,13 +7,14 @@
 </head>
 <body>
   <div id="app">
-    <div>
-      <input type="number" id="time-input" placeholder="Введите время в секундах">
-      <button id="add-timer">Добавить таймер</button>
-    </div>
+    <form id="form">
+      <input type="number" id="input" placeholder="Введите время в секундах" autocomplete="off">
+      <button id="button">Добавить таймер</button>
+    </form>
     <ul id="timers">
       <!-- Таймеры будут добавляться сюда -->
     </ul>
   </div>
+  <script src="./script.js"></script>
 </body>
 </html>
