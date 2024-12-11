@@ -19,7 +19,7 @@ function createTimerItem(seconds) {
 
     timerId = setInterval(() => {
       timerText.textContent = timerSeconds;
-      if (!timerSeconds) {
+      if (timerSeconds <= -1) {
         clearInterval(timerId);
         timerId = null;
         li.remove();
