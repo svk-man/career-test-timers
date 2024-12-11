@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form {
+  margin-bottom: 15px;
+}
+
+.timers {
+  list-style: none;
+}
+
+.timers-item {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.timers-item:last-child {
+  margin-bottom: 0;
+}
+
+.timers-item-text {
+  flex-grow: 1;
+}
+
+.timers-item-button {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.timers-item-button:last-child {
+  margin-right: 0;
+}
