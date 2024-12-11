@@ -23,6 +23,7 @@ function createTimerItem(seconds) {
       if (!timerSeconds) {
         clearInterval(timerId);
         timerId = null;
+        li.remove();
       }
 
       timerSeconds -= 1;
@@ -36,6 +37,7 @@ function createTimerItem(seconds) {
 
     clearInterval(timerId);
     timerId = null;
+    li.remove();
   })
 
   li.appendChild(timerText);
