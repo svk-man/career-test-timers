@@ -12,13 +12,9 @@ function createTimerItem(seconds) {
   li.classList.add('timers-item');
 
   const timerText = document.createElement('span');
-  timerText.classList.add('timers-item-text');
   timerText.textContent = seconds;
 
-  const timerPlayButton = document.createElement('button');
-  timerPlayButton.textContent = '▶';
-  timerPlayButton.classList.add('timers-item-button');
-  timerPlayButton.addEventListener('click', function() {
+  (function() {
     if (timerId) return;
 
     timerId = setInterval(() => {
@@ -31,7 +27,7 @@ function createTimerItem(seconds) {
 
       timerSeconds -= 1;
     }, 1000)
-  })
+  })()
 
   const timerStopButton = document.createElement('button');
   timerStopButton.textContent = '⏹';
@@ -45,7 +41,6 @@ function createTimerItem(seconds) {
   })
 
   li.appendChild(timerText);
-  li.appendChild(timerPlayButton);
   li.appendChild(timerStopButton);
 
   return li;
